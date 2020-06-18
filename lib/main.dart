@@ -37,8 +37,10 @@ class _QuizBodyState extends State<QuizBody> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
+            flex: 4,
               child: Center(
                   child: Text("questions go here",
                       style: TextStyle(color: Colors.white)))),
