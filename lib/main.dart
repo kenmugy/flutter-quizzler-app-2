@@ -45,11 +45,17 @@ class _QuizBodyState extends State<QuizBody> {
                   child: Text("questions go here",
                       style: TextStyle(color: Colors.white)))),
           Expanded(
-              child: FlatButton(
-                  color: Colors.green, onPressed: () {}, child: Text("True"))),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FlatButton(
+                    color: Colors.green, onPressed: () {}, child: Text("True")),
+              )),
           Expanded(
-              child: FlatButton(
-                  color: Colors.red, onPressed: () {}, child: Text("False")))
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FlatButton(
+                    color: Colors.red, onPressed: () {}, child: Text("False")),
+              ))
         ],
       ),
     );
