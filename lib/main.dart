@@ -16,7 +16,24 @@ class Quizzler extends StatelessWidget {
             style: TextStyle(letterSpacing: 1.4, fontWeight: FontWeight.bold),
           ),
         ),
+        body: QuizBody(),
       ),
+    );
+  }
+}
+
+class QuizBody extends StatefulWidget {
+  QuizBody({Key key}) : super(key: key);
+
+  @override
+  _QuizBodyState createState() => _QuizBodyState();
+}
+
+class _QuizBodyState extends State<QuizBody> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+       child: Column(),
     );
   }
 }
