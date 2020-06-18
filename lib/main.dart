@@ -8,7 +8,9 @@ class Quizzler extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.grey[900],
-        
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+        ),
       ),
     );
   }
