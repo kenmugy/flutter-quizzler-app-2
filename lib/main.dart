@@ -33,7 +33,10 @@ class _QuizBodyState extends State<QuizBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
-       child: Column(),
+       child: Column(
+         children: <Widget>[
+         ],
+       ),
     );
   }
 }
