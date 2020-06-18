@@ -12,7 +12,8 @@ class Quizzler extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.black,
           title: Text(
-            "Quizzzler App"
+            "Quizzzler App",
+            style: TextStyle(letterSpacing: 1.4, fontWeight: FontWeight.bold),
           ),
         ),
       ),
