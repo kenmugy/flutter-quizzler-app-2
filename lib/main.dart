@@ -13,7 +13,10 @@ class Quizzler extends StatelessWidget {
           backgroundColor: Colors.black,
           title: Text(
             "Quizzzler App",
-            style: TextStyle(letterSpacing: 1.4, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 1.4,
+                fontWeight: FontWeight.bold),
           ),
         ),
         body: QuizBody(),
@@ -33,10 +36,13 @@ class _QuizBodyState extends State<QuizBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
-       child: Column(
-         children: <Widget>[
-         ],
-       ),
+      child: Column(
+        children: <Widget>[
+          Expanded(child: Center(child: Text("questions go here", style: TextStyle(color: Colors.white)))),
+          Expanded(child: null),
+          Expanded(child: null)
+        ],
+      ),
     );
   }
 }
