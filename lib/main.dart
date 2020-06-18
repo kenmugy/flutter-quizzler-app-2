@@ -38,9 +38,16 @@ class _QuizBodyState extends State<QuizBody> {
     return Container(
       child: Column(
         children: <Widget>[
-          Expanded(child: Center(child: Text("questions go here", style: TextStyle(color: Colors.white)))),
-          Expanded(child: null),
-          Expanded(child: null)
+          Expanded(
+              child: Center(
+                  child: Text("questions go here",
+                      style: TextStyle(color: Colors.white)))),
+          Expanded(
+              child: FlatButton(
+                  color: Colors.green, onPressed: () {}, child: Text("True"))),
+          Expanded(
+              child: FlatButton(
+                  color: Colors.red, onPressed: () {}, child: Text("False")))
         ],
       ),
     );
