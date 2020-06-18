@@ -9,7 +9,11 @@ class Quizzler extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.grey[900],
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.black,
+          title: Text(
+            "Quizzzler App"
+          ),
         ),
       ),
     );
