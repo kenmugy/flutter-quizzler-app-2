@@ -43,6 +43,7 @@ class _QuizBodyState extends State<QuizBody> {
 "Question 3",
 "Question 4",
     ];
+    List<bool> answers = [ true, true, false, true];
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
