@@ -35,6 +35,7 @@ class QuizBody extends StatefulWidget {
 class _QuizBodyState extends State<QuizBody> {
   @override
   Widget build(BuildContext context) {
+    List<Icon> results= [];
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -44,6 +45,10 @@ class _QuizBodyState extends State<QuizBody> {
               child: Center(
                   child: Text("questions go here",
                       style: TextStyle(color: Colors.white)))),
+                      Expanded(
+                        child:Row(
+                          children: results,
+                        ) ,),
           Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
