@@ -36,6 +36,13 @@ class _QuizBodyState extends State<QuizBody> {
   @override
   Widget build(BuildContext context) {
     List<Icon> results= [];
+    int count = 0;
+    List<String> questions = [
+"Question 1",
+"Question 2",
+"Question 3",
+"Question 4",
+    ];
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
