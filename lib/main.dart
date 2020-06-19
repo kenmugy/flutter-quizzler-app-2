@@ -36,7 +36,9 @@ class _QuizBodyState extends State<QuizBody> {
   @override
   Widget build(BuildContext context) {
     List<Icon> results = [];
+
     int count = 0;
+
     List<String> questions = [
       "Question 1",
       "Question 2",
@@ -44,8 +46,9 @@ class _QuizBodyState extends State<QuizBody> {
       "Question 4",
     ];
     List<bool> answers = [true, true, false, true];
+
     void checkAns(bool userResponse) {
-      if (userResponse == true) {
+      if (userResponse == answers[count]) {
         results.add(Icon(
           Icons.check,
           color: Colors.green,
@@ -55,8 +58,8 @@ class _QuizBodyState extends State<QuizBody> {
           Icons.close,
           color: Colors.red,
         ));
-        count++;
       }
+      count++;
     }
 
     return Container(
@@ -66,11 +69,14 @@ class _QuizBodyState extends State<QuizBody> {
           Expanded(
               flex: 4,
               child: Center(
-                  child: Text("questions go here",
+                  child: Text(questions[count],
                       style: TextStyle(color: Colors.white)))),
           Expanded(
-            child: Row(
-              children: results,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: results,
+              ),
             ),
           ),
           Expanded(
