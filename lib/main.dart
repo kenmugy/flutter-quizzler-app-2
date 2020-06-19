@@ -35,40 +35,56 @@ class QuizBody extends StatefulWidget {
 class _QuizBodyState extends State<QuizBody> {
   @override
   Widget build(BuildContext context) {
-    List<Icon> results= [];
+    List<Icon> results = [];
     int count = 0;
     List<String> questions = [
-"Question 1",
-"Question 2",
-"Question 3",
-"Question 4",
+      "Question 1",
+      "Question 2",
+      "Question 3",
+      "Question 4",
     ];
-    List<bool> answers = [ true, true, false, true];
+    List<bool> answers = [true, true, false, true];
+    void checkAns(bool userResponse) {
+      if (userResponse == true) {
+        results.add(Icon(
+          Icons.check,
+          color: Colors.green,
+        ));
+      } else {
+        results.add(Icon(
+          Icons.close,
+          color: Colors.red,
+        ));
+        count++;
+      }
+    }
+
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-            flex: 4,
+              flex: 4,
               child: Center(
                   child: Text("questions go here",
                       style: TextStyle(color: Colors.white)))),
-                      Expanded(
-                        child:Row(
-                          children: results,
-                        ) ,),
+          Expanded(
+            child: Row(
+              children: results,
+            ),
+          ),
           Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FlatButton(
-                    color: Colors.green, onPressed: () {}, child: Text("True")),
-              )),
+            padding: const EdgeInsets.all(8.0),
+            child: FlatButton(
+                color: Colors.green, onPressed: () {}, child: Text("True")),
+          )),
           Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FlatButton(
-                    color: Colors.red, onPressed: () {}, child: Text("False")),
-              ))
+            padding: const EdgeInsets.all(8.0),
+            child: FlatButton(
+                color: Colors.red, onPressed: () {}, child: Text("False")),
+          ))
         ],
       ),
     );
