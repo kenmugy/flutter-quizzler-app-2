@@ -77,13 +77,17 @@ class _QuizBodyState extends State<QuizBody> {
               child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: FlatButton(
-                color: Colors.green, onPressed: () {}, child: Text("True")),
+                color: Colors.green,
+                onPressed: () => checkAns(true),
+                child: Text("True")),
           )),
           Expanded(
               child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: FlatButton(
-                color: Colors.red, onPressed: () {}, child: Text("False")),
+                color: Colors.red,
+                onPressed: () => checkAns(false),
+                child: Text("False")),
           ))
         ],
       ),
