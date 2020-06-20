@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'questionBank.dart';
+
+QuestionBank questions = QuestionBank();
 
 void main() => runApp(Quizzler());
 
@@ -37,16 +40,8 @@ class _QuizBodyState extends State<QuizBody> {
 
   int count = 0;
 
-  List<String> questions = [
-    "Question 1",
-    "Question 2",
-    "Question 3",
-    "Question 4",
-  ];
-  List<bool> answers = [true, true, false, true];
-
   void checkAns(bool userResponse) {
-    bool realAns = answers[count];
+    bool realAns = questions.questions[count].ans;
     if (userResponse == realAns) {
       setState(() {
         results.add(Icon(
@@ -73,9 +68,12 @@ class _QuizBodyState extends State<QuizBody> {
         children: <Widget>[
           Expanded(
               flex: 4,
-              child: Center(
-                  child: Text(questions[count],
-                      style: TextStyle(color: Colors.white)))),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                    child: Text(questions.questions[count].questionDisplayed,
+                        style: TextStyle(color: Colors.white))),
+              )),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
