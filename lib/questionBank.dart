@@ -1,6 +1,8 @@
 import 'question.dart';
 
 class QuestionBank {
+  int count = 0;
+
   List<Question> _questions = [
     Question('Some cats are actually allergic to humans', true),
     Question('You can lead a cow down stairs but not up stairs.', false),
@@ -29,7 +31,12 @@ class QuestionBank {
         true),
   ];
 
-  Question serveQuestion(int countNum) {
-    return _questions[countNum];
+  void stopQnError() {
+    if (count < _questions.length - 1) {
+      count++;
+      print(count);
+    }
   }
+
+  Question serveQuestion(int countNum) => _questions[countNum];
 }

@@ -38,10 +38,8 @@ class QuizBody extends StatefulWidget {
 class _QuizBodyState extends State<QuizBody> {
   List<Icon> results = [];
 
-  int count = 0;
-
   void checkAns(bool userResponse) {
-    bool realAns = questions.serveQuestion(count).ans;
+    bool realAns = questions.serveQuestion(questions.count).ans;
     if (userResponse == realAns) {
       setState(() {
         results.add(Icon(
@@ -57,7 +55,7 @@ class _QuizBodyState extends State<QuizBody> {
         ));
       });
     }
-    count++;
+    questions.stopQnError();
   }
 
   @override
@@ -72,7 +70,9 @@ class _QuizBodyState extends State<QuizBody> {
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                     child: Text(
-                        questions.serveQuestion(count).questionDisplayed,
+                        questions
+                            .serveQuestion(questions.count)
+                            .questionDisplayed,
                         style: TextStyle(color: Colors.white))),
               )),
           Expanded(
