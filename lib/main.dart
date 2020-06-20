@@ -33,35 +33,40 @@ class QuizBody extends StatefulWidget {
 }
 
 class _QuizBodyState extends State<QuizBody> {
+  List<Icon> results = [];
+
+  int count = 0;
+
+  List<String> questions = [
+    "Question 1",
+    "Question 2",
+    "Question 3",
+    "Question 4",
+  ];
+  List<bool> answers = [true, true, false, true];
+
+  void checkAns(bool userResponse) {
+    bool realAns = answers[count];
+    if (userResponse == realAns) {
+      setState(() {
+        results.add(Icon(
+        Icons.check,
+        color: Colors.green,
+      ));
+      });
+    } else {
+      setState(() {
+        results.add(Icon(
+        Icons.close,
+        color: Colors.red,
+      ));
+      });
+    }
+    count++;
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Icon> results = [];
-
-    int count = 0;
-
-    List<String> questions = [
-      "Question 1",
-      "Question 2",
-      "Question 3",
-      "Question 4",
-    ];
-    List<bool> answers = [true, true, false, true];
-
-    void checkAns(bool userResponse) {
-      if (userResponse == answers[count]) {
-        results.add(Icon(
-          Icons.check,
-          color: Colors.green,
-        ));
-      } else {
-        results.add(Icon(
-          Icons.close,
-          color: Colors.red,
-        ));
-      }
-      count++;
-    }
-
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
