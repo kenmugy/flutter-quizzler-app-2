@@ -41,20 +41,20 @@ class _QuizBodyState extends State<QuizBody> {
   int count = 0;
 
   void checkAns(bool userResponse) {
-    bool realAns = questions.questions[count].ans;
+    bool realAns = questions.serveQuestion(count).ans;
     if (userResponse == realAns) {
       setState(() {
         results.add(Icon(
-        Icons.check,
-        color: Colors.green,
-      ));
+          Icons.check,
+          color: Colors.green,
+        ));
       });
     } else {
       setState(() {
         results.add(Icon(
-        Icons.close,
-        color: Colors.red,
-      ));
+          Icons.close,
+          color: Colors.red,
+        ));
       });
     }
     count++;
@@ -71,7 +71,8 @@ class _QuizBodyState extends State<QuizBody> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
-                    child: Text(questions.questions[count].questionDisplayed,
+                    child: Text(
+                        questions.serveQuestion(count).questionDisplayed,
                         style: TextStyle(color: Colors.white))),
               )),
           Expanded(
